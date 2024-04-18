@@ -39,7 +39,7 @@ header {
     text-decoration: none;
     display: inline-block;
     color: #fff;
-    padding: 7px 11px 8px;
+    padding: 7px 11px 5px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 5px;
@@ -54,19 +54,26 @@ header {
 
 .hero {
     width: 100%;
-    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /*! padding: 0 30px; */
 }
 
-.hero h1 {
+.hero .hero_img {width: 100%;max-height: 80vh;}
+
+.hero .hero_img img {width: 100%;max-height: 80vh;}
+
+.hero .hero_content {text-align: center;margin-top: 50px;}
+
+.hero .hero_content h1 {
     text-align: center;
     margin: 16px 0 16px;
 }
 
-.hero_btn {
+
+.hero .hero_content .hero_btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,12 +169,6 @@ header {
     font-weight: bold;
 }
 
-.content_section ul li a:hover {}
-
-.content_section.horizontal_layout {}
-
-.content_section.horizontal_layout ul {}
-
 .content_section.horizontal_layout ul li {
     flex-direction: row;
     align-items: flex-start;
@@ -186,8 +187,6 @@ header {
 .content_section.horizontal_layout ul li p a {
     margin: 0;
 }
-
-.content_section.content_list {}
 
 .content_section.content_list ul {
     row-gap: 10px;
@@ -209,10 +208,8 @@ header {
     font-weight: bold;
     font-size: 16px;
 }
-
-.content_section.content_list p a {}
-
-
+.ytv{max-width: 700px;margin: auto;height: 395px;}
+.ytv iframe{height: 100%;}
 .col_3 {
     width: 33.333%;
 }
@@ -222,9 +219,6 @@ header {
     flex-direction: column;
     row-gap: 24px;
 }
-
-.col_3 ul li {}
-
 
 .request {
     margin: 50px 0;
@@ -249,15 +243,7 @@ footer {
     justify-content: center;
 }
 
-.note img {
-    margin-right: 10px;
-}
-
-.note.up {
-    margin-top: -216px;
-    z-index: 4;
-    position: relative;
-}
+.money_bg{display: flex;align-items: center;justify-content: center;}
 
 /* Back to Top */
 #progress {
@@ -287,17 +273,40 @@ footer {
 }
 
 /* Responsive CSS */
+@media only screen and (max-width: 1370px) {
+    .navigator ul li {
+        flex: 50%;
+    }
+}
+
+@media only screen and (max-width: 1170px) {
+    .content_section ul li {
+        flex: calc(33.333% - 20px);
+        flex-grow: unset;
+    }
+}
+
 @media only screen and (max-width: 992px) {
-    .content_section ul {
+    .content_section ul li {
+        flex: calc(50% - 20px);
+        flex-grow: unset;
+    }
+
+    .navigator ul {
         flex-direction: column;
     }
 }
 
 
 .payment_page {
-    padding: 100px 30px;
+    padding: 40px 30px;
 }
-
+.payment_page .btm {
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	margin-bottom: 20px;
+}
 .payment_page h1 {
     text-align: center;
 }
@@ -316,26 +325,9 @@ footer {
     opacity: .9;
     margin-bottom: 5px;
 }
-.payBy p b {
-    text-decoration: underline;
-}
 
 .frame {
     position: relative;
-}
-
-.over_left {}
-
-.over_right {}
-
-.over_bottom {
-    width: 720px;
-    height: 230px;
-    position: absolute;
-    z-index: 3;
-    bottom: 0;
-    background: #f7f7f7;
-    left: calc(50% - 360px);
 }
 
 .form {
@@ -348,53 +340,50 @@ iframe {
     width: 100%;
     height: 1250px;
 }
+
 @media only screen and (max-width: 600px) {
-    .over_bottom {
-        height: 210px;
-    } 
     .note.up {
         margin-top: -210px;
     }
+
+    .content_section ul li {
+        flex: calc(100% - 20px);
+        flex-grow: unset;
+    }
 }
+
 @media only screen and (max-width: 560px) {
-    .over_bottom {
-        height: 170px;
-    } 
     .note.up {
         margin-top: -170px;
     }
 }
+
 @media only screen and (max-width: 485px) {
     iframe {
         height: 1400px;
     }
-    .over_bottom {
-        height: 300px;
-    } 
+
     .note.up {
         margin-top: -300px;
     }
 }
+
 @media only screen and (max-width: 409px) {
     iframe {
         height: 1400px;
     }
-    .over_bottom {
-        height: 260px;
-    } 
+
     .note.up {
         margin-top: -260px;
     }
 }
+
 @media only screen and (max-width: 399px) {
     iframe {
         height: 1400px;
     }
-    .over_bottom {
-        height: 242px;
-    } 
+
     .note.up {
         margin-top: -242px;
     }
 }
-
